@@ -1,12 +1,14 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import { Container, Li, List} from './styles';
+import { Apikey } from '../../config/key';
 
 function Home() {
 
 
-    {/*Criando array para listar os animes*/}
+    /*Criando array para listar os animes*/
+
+    /*
     const animes = [
-        
         {
             title: 'Naruto Shipuden',
             image_url: 'https://cf.geekdo-images.com/gf25Q2fun2X5WnjwmQIOvA__opengraph/img/mgvE1sMniljGIgXK9caUTJobpWA=/fit-in/1200x630/filters:strip_icc()/pic2928408.jpg'
@@ -33,8 +35,9 @@ function Home() {
             image_url: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/2239c7b46b2e491ae33b33ff980e9fb1.jpe'
         }
     ];
-    {/* Criando array para listar os meus filmes */}
 
+    /* Criando array para listar os meus filmes */
+    /*
     const movies = [
         {
             title: "Matrix Revolutions",
@@ -47,6 +50,27 @@ function Home() {
             img_url: "https://upload.wikimedia.org/wikipedia/pt/a/af/Blade_Runner_2049.png"
         }
     ]
+    */
+
+   //criando um estado para puxar meus filmes e animes
+
+   const [tvs, setTvs] = useState([]);
+   const [anime, setAnimes] = useState([]);
+   const img_path = "https://image.tmdb.org/t/p/w500";
+
+
+
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${Apikey}&language=en-US&page=1`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setTvs(data.results)
+        })
+    }, []);
+
+    
+
 
     return (
 
@@ -55,34 +79,39 @@ function Home() {
         <h1>Aqui esta a lista dos melhores filmes e animes disponíveis para você!</h1>
 
         <List>
-        {animes.map(anime => {
+        {anime.map(animes => {
             return (   
-                    <Li>
-                      <a href='https://google.com'>
-                      <img src={anime.image_url}/>
-                        <h2>{anime.title}</h2>
-                        </a>  
-                    </Li>
+                <Li>
+                    <a href='https://google.com'>
+                    <img src={animes.image_url}/>
+                    </a>  
+                    <h2>{animes.title}</h2>
+                   
+                </Li>
             );
         })}
 
-        {movies.map (movie => {
+        {tvs.map(tv => {
+
             return (
-                
-                    <Li>
-                        <a href='https://google.com'>
-                        <img src={movie.img_url}/>
-                        <h2>{movie.title}</h2>
-                        </a>
-                    </Li>
-                
+                <Li>
+                    <a href='https://google.com'>
+                    <img src={`${img_path}${tv.setTv}`}/>
+                    </a>
+                    <h2>
+                    {tv.name}
+                    </h2>
+                </Li> 
             );
         })}
-
         </List>
         </Container>
+        
     );
 }
 
 
 export default Home;
+
+
+
