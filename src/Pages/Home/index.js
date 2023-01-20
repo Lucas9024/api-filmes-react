@@ -52,12 +52,12 @@ function Home() {
     ]
     */
 
+
    //criando um estado para puxar meus filmes e animes
 
    const [tvs, setTvs] = useState([]);
    const [anime, setAnimes] = useState([]);
-   const img_path = "https://image.tmdb.org/t/p/w500";
-
+   const imgpath = "https://image.tmdb.org/t/p/w500/";
 
 
     useEffect(() => {
@@ -69,7 +69,6 @@ function Home() {
         })
     }, []);
 
-    
 
 
     return (
@@ -79,7 +78,9 @@ function Home() {
         <h1>Aqui esta a lista dos melhores filmes e animes disponíveis para você!</h1>
 
         <List>
+      
         {anime.map(animes => {
+
             return (   
                 <Li>
                     <a href='https://google.com'>
@@ -94,22 +95,24 @@ function Home() {
         {tvs.map(tv => {
 
             return (
+
                 <Li>
                     <a href='https://google.com'>
-                    <img src={`${img_path}${tv.setTv}`}/>
+                    <img src={`${imgpath}${tv.poster_path}`}/>
                     </a>
                     <h2>
                     {tv.name}
                     </h2>
                 </Li> 
+                
             );
         })}
+
         </List>
         </Container>
         
     );
 }
-
 
 export default Home;
 
