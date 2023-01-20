@@ -6,6 +6,7 @@ export const Container = styled.div`
         text-align: center;
         padding: 4rem 0;
 }
+
 `;
 
 export const List = styled.ul`
