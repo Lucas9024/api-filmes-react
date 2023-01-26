@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import { Container, Li, List} from './styles';
 import { Apikey } from '../../config/key';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -91,18 +92,22 @@ function Home() {
                 </Li>
             );
         })}
+        
 
         {tvs.map(tv => {
 
             return (
 
-                <Li>
+                <Li key={tv.id}>
+                   <Link to={`/details/${tv.id}`}>
+                   <img src={`${imgpath}${tv.poster_path}`}/>
+                   </Link>
+                   
                     <a href='https://google.com'>
-                    <img src={`${imgpath}${tv.poster_path}`}/>
-                    </a>
                     <h2>
                     {tv.name}
                     </h2>
+                    </a>
                 </Li> 
                 
             );
