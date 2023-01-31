@@ -6,6 +6,122 @@ import { Link } from 'react-router-dom';
 function Home() {
 
 
+    /**Criando um array para listar o pdf */
+
+    const pdf = {
+
+        /** titulo de cada tela*/
+
+        titleData: 'Dados da Obra',
+        /** ********************  */
+
+        data: '30/06/2023',
+        tipoRevest: 'tecnico',
+        metragemData: '100 x 100',
+        razaoSocial: 'Ns', 
+        endereco: 'rua das missas',
+        cep: '39805-540',
+        cnpjCpf: '039.815.340-45/1000',
+        incricaoEstadual: '085469737',
+        enderecoDaObra: 'rua acemar neto',
+        contato: 'Alcides moreira',
+        setor: 'Hidraulico',
+        email: 'lucasferrer@gmail.com',
+        telefone: '55 994512768',
+        aplicador: 'gomercindo',
+        representante: 'Jose bonifacio',
+        PV: '999',
+
+         /** titulo de cada tela */
+
+         titleCheck: 'Check List',
+         /** ********************  */
+         cliente: 'Edson Dutra',
+         dadosLevantados: 'Vistoria in Loco',
+         tipoDeUso: 'Residencial',
+
+         /** subTitulo  */
+
+         subTitlePrincipal: 'Sistema principal / Aplicador / Especificador',
+           /** ********************  */
+         sistemaPrincipal: 'Obra',
+         MetragemCheck: '45 x 45',
+
+          /** subTitulo  */
+
+          subTitleRevest: 'Solicitacao de revestimento',
+          /** ********************  */
+
+          cor: 'Cinza',
+          Espessura: '3cm',
+          AreaTotal: '2mt',
+          rodape: 'Nao',
+          altura: '1,90mt',
+          juntos: 'sim',
+          canaleta: 'nao',
+          faixasDemarcatorias: 'sim',
+          refBordas: 'nao',
+          Sinalizacoes: 'Hidrantes',
+          acabamento: 'fosco',
+
+           /** subTitulo  */
+         subTitleSubstrato: 'Tipo de Substrato',
+         /** ********************  */
+
+        idadeDoConcreto: '7 anos',
+        mpa: 'rna',
+        baixaResistencia: 'nao',
+        revestimentoExistente:'contra-piso',
+
+         /** subTitulo  */
+
+         subTitleMecanica: 'Solicitacao mecanica',
+           /** ********************  */
+
+           veiculos: 'leves',
+           carrinhoDeRodas: 'removivel',
+           empilhadeiras: 'Eletrica',
+           peso: '2 toneladas',
+
+           /** subTitulo  */
+
+         subTitleQuimica: 'Solicitacao quimica',
+
+         /** ********************  */
+
+         substanciasQuimica: ['Acetato de glicogenio', 'Ar liquido', 'Biocombustivel'],
+         concentracao: '15%',
+         temperatura: '41 graus',
+         Intensidade: 'leve',
+         ambiente: 'interno',
+        
+        /** subtitulo */
+
+        subTitleReparo: 'Reparo de base / Reparo',
+        /** ********************  */
+
+        preparo: 'Fresamento',
+        material: 'Silicio',
+
+         /** subtitulo */
+
+         subTitleLimpeza: 'Limpeza',
+         /** ********************  */
+
+         limpeza: 'Manual',
+
+          /** subtitulo */
+
+        subTitleExpectativa: 'Expectativa de liberacao',
+
+        /** ********************  */
+
+        tempo: '24 horas 48 horas'
+
+
+        }
+
+
     /*Criando array para listar os animes*/
 
     /*
